@@ -4,7 +4,7 @@ import { babel } from "@rollup/plugin-babel";
 import typescript from "@rollup/plugin-typescript";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx', '.json']
+const extensions = [".js", ".jsx", ".ts", ".tsx", ".json"];
 
 const indexConfig = {
   input: "./src/index.ts",
@@ -13,7 +13,12 @@ const indexConfig = {
     format: "es",
     inlineDynamicImports: true,
   },
-  external: ["react", "react/jsx-runtime", "flowise-embed"],
+  external: [
+    "react",
+    "react-dom",
+    "react/jsx-runtime",
+    "@bxtech/flowise-embed",
+  ],
   plugins: [
     resolve({ extensions }),
     babel({

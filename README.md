@@ -9,13 +9,13 @@ React library to display flowise chatbot on your website
 ## Install
 
 ```bash
-npm install flowise-embed flowise-embed-react
+npm install @bxtech/flowise-embed @bxtech/flowise-embed-react
 ```
 
 or
 
 ```bash
-yarn add flowise-embed flowise-embed-react
+yarn add @bxtech/flowise-embed @bxtech/flowise-embed-react
 ```
 
 ## Import
@@ -23,7 +23,7 @@ yarn add flowise-embed flowise-embed-react
 Full Page Chat
 
 ```tsx
-import { FullPageChat } from "flowise-embed-react";
+import { FullPageChat } from "@bxtech/flowise-embed-react";
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const App = () => {
 Popup Chat
 
 ```tsx
-import { BubbleChat } from "flowise-embed-react";
+import { BubbleChat } from "@bxtech/flowise-embed-react";
 
 const App = () => {
   return (
