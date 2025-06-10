@@ -10,5 +10,6 @@
     "declarationMap": true,
     "outDir": "dist",
     "emitDeclarationOnly": true
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }
