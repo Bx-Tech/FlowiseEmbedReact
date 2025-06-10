@@ -1,6 +1,6 @@
 {
   "name": "@bxtech/flowise-embed-react",
-  "version": "3.0.6-if-rc4",
+  "version": "3.0.7",
   "description": "React library to display flowise chatbot on your website",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@bxtech/flowise-embed": "^3.0.6-if-rc2",
+    "@bxtech/flowise-embed": "^3.0.7",
     "@ladle/react": "2.5.1"
   },
   "devDependencies": {
