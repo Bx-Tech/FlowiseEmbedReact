@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { BubbleProps } from "@bxtech/flowise-embed";
 
-type Props = BubbleProps;
+type Props = BubbleProps & {
+  onSendMessage?: (sendMessage: (message: string | object, action?: any, humanInput?: any) => Promise<void>) => void;
+};
 
 declare global {
   namespace JSX {
@@ -19,7 +21,7 @@ type BubbleElement = HTMLElement & Props;
 export const BubbleChat = (props: Props) => {
   const ref = useRef<BubbleElement | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
-
+  const sendMessageFn = useRef<undefined | ((...args: any[]) => Promise<void>)>(undefined);
   useEffect(() => {
     (async () => {
       await import("@bxtech/flowise-embed/dist/web.js");
@@ -34,9 +36,9 @@ export const BubbleChat = (props: Props) => {
     const bubbleElement = document.createElement(
       "flowise-chatbot"
     ) as BubbleElement;
+    injectPropsToElement(bubbleElement, props);
+    document.body.append(bubbleElement);
     ref.current = bubbleElement;
-    injectPropsToElement(ref.current, props);
-    document.body.append(ref.current);
   }, []);
 
   useEffect(() => {
@@ -46,6 +48,12 @@ export const BubbleChat = (props: Props) => {
   }, [attachBubbleToDom, isInitialized, props]);
 
   const injectPropsToElement = (element: BubbleElement, props: Props) => {
+    (element as any).onBotMount = (fn: typeof sendMessageFn.current) => {
+      sendMessageFn.current = fn;
+      if (typeof props.onSendMessage === "function" && typeof fn === "function") {
+        props.onSendMessage(fn);
+      }
+    };
     Object.assign(element, props);
   };
 
