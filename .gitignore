@@ -3,3 +3,6 @@ dist
 
 # husky
 prepare-commit-msg
+
+.yalc
+yalc.lock
