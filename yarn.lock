@@ -915,10 +915,10 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@bxtech/flowise-embed@3.0.9-test1":
-  version "3.0.9-test1"
-  resolved "https://registry.yarnpkg.com/@bxtech/flowise-embed/-/flowise-embed-3.0.9-test1.tgz#7ddd5b5b8ae4a7d1ff37b0e1ead9ce922611ccfa"
-  integrity sha512-iC8tiI9GkVXlv363PdUQVRYK0NLRvdHjTj7p7xn/8dfMxoqVJ7dLwejcZ71YnXmp5sG1nImU5CO7+IMG9+7r0w==
+"@bxtech/flowise-embed@3.0.9":
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@bxtech/flowise-embed/-/flowise-embed-3.0.9.tgz#0581eb584633381b0dcd3b392e9a481befc73b6e"
+  integrity sha512-7AgYyBDjA3o3o0O2aDksDE3dqMVKFhDQ0q3N4vE1nGE5UrdUenfs11r/GYipNZtkra7T8MDP5D5KHP8dcWDpVw==
   dependencies:
     "@babel/core" "^7.22.1"
     "@microsoft/fetch-event-source" "^2.0.1"
