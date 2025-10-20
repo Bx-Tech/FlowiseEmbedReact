@@ -1,5 +1,6 @@
 node_modules
 dist
+.DS_Store
 
 # husky
 prepare-commit-msg

@@ -1,20 +1,24 @@
 {
   "name": "@bxtech/flowise-embed-react",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "description": "React library to display flowise chatbot on your website",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "rollup --watch --config rollup.config.js",
     "build": "rollup --config rollup.config.js",
     "lint": "eslint --fix \"src/**/*.ts*\"",
-    "yalc:watch": "watch \"yalc push --sig\""
+    "yalc:watch": "npx watch \"yalc push --sig\" dist/",
+    "dev:yalc": "npm-run-all --parallel dev yalc:watch"
   },
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@bxtech/flowise-embed": "3.0.9",
+    "@bxtech/flowise-embed": "3.0.10",
     "@ladle/react": "2.5.1"
   },
   "devDependencies": {
@@ -34,7 +38,7 @@
     "watch": "^1.0.2"
   },
   "peerDependencies": {
-    "@bxtech/flowise-embed": "3.0.9",
+    "@bxtech/flowise-embed": "3.0.10",
     "react": "18.2.0"
   }
 }
